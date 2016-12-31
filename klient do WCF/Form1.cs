@@ -32,9 +32,31 @@ namespace klient_do_WCF
                 using (klient_do_WCF.ServiceReference1.Service1Client client = new klient_do_WCF.ServiceReference1.Service1Client(endpointName))
                 //using (ServiceReference1.IService1 client = new ServiceReference1.IService1(endpointName))
                 {
-                   var s = client.DateReturn();
+                    var s = client.DateReturn();
 
-                  
+
+
+                    MessageBox.Show("" + s + "", "MD information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception" + ex.ToString());
+            }
+        }
+
+        private void readTextToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                using (klient_do_WCF.ServiceReference1.Service1Client client = new klient_do_WCF.ServiceReference1.Service1Client(endpointName))
+                //using (ServiceReference1.IService1 client = new ServiceReference1.IService1(endpointName))
+                {
+                    var s = client.ReadText();
+
+
 
                     MessageBox.Show("" + s + "", "MD information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -45,6 +67,7 @@ namespace klient_do_WCF
             }
         }
     }
-
-
 }
+
+
+

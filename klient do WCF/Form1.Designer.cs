@@ -86,6 +86,7 @@
             this.readTextToolStripMenuItem.Name = "readTextToolStripMenuItem";
             this.readTextToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.readTextToolStripMenuItem.Text = "Read Text";
+            this.readTextToolStripMenuItem.Click += new System.EventHandler(this.readTextToolStripMenuItem_Click);
             // 
             // label1
             // 
