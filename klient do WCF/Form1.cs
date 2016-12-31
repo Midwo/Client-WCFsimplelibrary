@@ -30,12 +30,12 @@ namespace klient_do_WCF
                     request.Message = "lubie placki";
                     request.AgentAction = true;
                     var response = client.WelcomeHistory(request);
-                    foreach (var mess in response)
-                    {
-                        ss += mess;
-                    }
+                    //foreach (var mess in response)
+                    //{
+                    //    ss += mess;
+                    //}
 
-                    MessageBox.Show("" + ss + "");
+                    MessageBox.Show("" + response + "");
                 }
             }
             catch (Exception ex)
