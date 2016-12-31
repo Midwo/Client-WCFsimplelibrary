@@ -66,6 +66,12 @@ namespace klient_do_WCF
                 MessageBox.Show("Exception" + ex.ToString());
             }
         }
+
+        private void sendOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Order m = new Order();
+            m.Show();
+        }
     }
 }
 

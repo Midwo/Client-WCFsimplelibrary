@@ -80,6 +80,7 @@
             this.sendOrderToolStripMenuItem.Name = "sendOrderToolStripMenuItem";
             this.sendOrderToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.sendOrderToolStripMenuItem.Text = "Send  Order";
+            this.sendOrderToolStripMenuItem.Click += new System.EventHandler(this.sendOrderToolStripMenuItem_Click);
             // 
             // readTextToolStripMenuItem
             // 
