@@ -16,7 +16,7 @@ namespace klient_do_WCF
         {
             InitializeComponent();
         }
-
+        string endpointName = "BasicHttpBinding_IService1";
 
         private void welcomeHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -26,7 +26,23 @@ namespace klient_do_WCF
 
         private void dateReturnToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+                using (klient_do_WCF.ServiceReference1.Service1Client client = new klient_do_WCF.ServiceReference1.Service1Client(endpointName))
+                //using (ServiceReference1.IService1 client = new ServiceReference1.IService1(endpointName))
+                {
+                   var s = client.DateReturn();
+
+                  
+
+                    MessageBox.Show("" + s + "", "MD information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception" + ex.ToString());
+            }
         }
     }
 

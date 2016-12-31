@@ -34,7 +34,7 @@ namespace klient_do_WCF
 
         void send(string endpointName = "BasicHttpBinding_IService1")
         {
-            Console.WriteLine("SyncCall " + endpointName);
+         
             try
             {
                 
@@ -57,7 +57,7 @@ namespace klient_do_WCF
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception" + ex.ToString());
+                MessageBox.Show("Exception" + ex.ToString());
             }
         }
     }
