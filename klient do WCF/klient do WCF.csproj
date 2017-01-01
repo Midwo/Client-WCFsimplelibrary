@@ -140,6 +140,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="2017-01-01 at 42-20.png" />
+    <Content Include="2017-01-01 at 42-31.png" />
+    <Content Include="2017-01-01 at 44-06.png" />
+    <Content Include="2017-01-01 at 44-15.png" />
     <Content Include="favicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

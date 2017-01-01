@@ -51,7 +51,7 @@ namespace klient_do_WCF
                     //{
                     //    ss += mess;
                     //}
-
+                    
                     MessageBox.Show("" + response + "", "MD information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

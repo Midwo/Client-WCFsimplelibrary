@@ -56,7 +56,7 @@ namespace klient_do_WCF
                 {
                     var s = client.ReadText();
 
-
+                    
 
                     MessageBox.Show("" + s + "", "MD information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
