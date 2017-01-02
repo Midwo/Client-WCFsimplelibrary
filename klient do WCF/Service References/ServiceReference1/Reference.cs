@@ -254,26 +254,34 @@ namespace klient_do_WCF.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/WelcomeHistory", ReplyAction="http://tempuri.org/IService1/WelcomeHistoryResponse")]
         string WelcomeHistory(klient_do_WCF.ServiceReference1.DataContractIService1WelcomeHistory ALL);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/WelcomeHistory", ReplyAction="http://tempuri.org/IService1/WelcomeHistoryResponse")]
-        System.Threading.Tasks.Task<string> WelcomeHistoryAsync(klient_do_WCF.ServiceReference1.DataContractIService1WelcomeHistory ALL);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/WelcomeHistory", ReplyAction="http://tempuri.org/IService1/WelcomeHistoryResponse")]
+        System.IAsyncResult BeginWelcomeHistory(klient_do_WCF.ServiceReference1.DataContractIService1WelcomeHistory ALL, System.AsyncCallback callback, object asyncState);
+        
+        string EndWelcomeHistory(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DateReturn", ReplyAction="http://tempuri.org/IService1/DateReturnResponse")]
         string DateReturn();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DateReturn", ReplyAction="http://tempuri.org/IService1/DateReturnResponse")]
-        System.Threading.Tasks.Task<string> DateReturnAsync();
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/DateReturn", ReplyAction="http://tempuri.org/IService1/DateReturnResponse")]
+        System.IAsyncResult BeginDateReturn(System.AsyncCallback callback, object asyncState);
+        
+        string EndDateReturn(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendOrder", ReplyAction="http://tempuri.org/IService1/SendOrderResponse")]
         string SendOrder(klient_do_WCF.ServiceReference1.DataContractIService1SendOrder data);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SendOrder", ReplyAction="http://tempuri.org/IService1/SendOrderResponse")]
-        System.Threading.Tasks.Task<string> SendOrderAsync(klient_do_WCF.ServiceReference1.DataContractIService1SendOrder data);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/SendOrder", ReplyAction="http://tempuri.org/IService1/SendOrderResponse")]
+        System.IAsyncResult BeginSendOrder(klient_do_WCF.ServiceReference1.DataContractIService1SendOrder data, System.AsyncCallback callback, object asyncState);
+        
+        string EndSendOrder(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ReadText", ReplyAction="http://tempuri.org/IService1/ReadTextResponse")]
         string ReadText();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ReadText", ReplyAction="http://tempuri.org/IService1/ReadTextResponse")]
-        System.Threading.Tasks.Task<string> ReadTextAsync();
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/ReadText", ReplyAction="http://tempuri.org/IService1/ReadTextResponse")]
+        System.IAsyncResult BeginReadText(System.AsyncCallback callback, object asyncState);
+        
+        string EndReadText(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -282,7 +290,107 @@ namespace klient_do_WCF.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class WelcomeHistoryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public WelcomeHistoryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class DateReturnCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public DateReturnCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class SendOrderCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public SendOrderCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ReadTextCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public ReadTextCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Service1Client : System.ServiceModel.ClientBase<klient_do_WCF.ServiceReference1.IService1>, klient_do_WCF.ServiceReference1.IService1 {
+        
+        private BeginOperationDelegate onBeginWelcomeHistoryDelegate;
+        
+        private EndOperationDelegate onEndWelcomeHistoryDelegate;
+        
+        private System.Threading.SendOrPostCallback onWelcomeHistoryCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginDateReturnDelegate;
+        
+        private EndOperationDelegate onEndDateReturnDelegate;
+        
+        private System.Threading.SendOrPostCallback onDateReturnCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginSendOrderDelegate;
+        
+        private EndOperationDelegate onEndSendOrderDelegate;
+        
+        private System.Threading.SendOrPostCallback onSendOrderCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginReadTextDelegate;
+        
+        private EndOperationDelegate onEndReadTextDelegate;
+        
+        private System.Threading.SendOrPostCallback onReadTextCompletedDelegate;
         
         public Service1Client() {
         }
@@ -303,36 +411,208 @@ namespace klient_do_WCF.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
+        public event System.EventHandler<WelcomeHistoryCompletedEventArgs> WelcomeHistoryCompleted;
+        
+        public event System.EventHandler<DateReturnCompletedEventArgs> DateReturnCompleted;
+        
+        public event System.EventHandler<SendOrderCompletedEventArgs> SendOrderCompleted;
+        
+        public event System.EventHandler<ReadTextCompletedEventArgs> ReadTextCompleted;
+        
         public string WelcomeHistory(klient_do_WCF.ServiceReference1.DataContractIService1WelcomeHistory ALL) {
             return base.Channel.WelcomeHistory(ALL);
         }
         
-        public System.Threading.Tasks.Task<string> WelcomeHistoryAsync(klient_do_WCF.ServiceReference1.DataContractIService1WelcomeHistory ALL) {
-            return base.Channel.WelcomeHistoryAsync(ALL);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginWelcomeHistory(klient_do_WCF.ServiceReference1.DataContractIService1WelcomeHistory ALL, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginWelcomeHistory(ALL, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndWelcomeHistory(System.IAsyncResult result) {
+            return base.Channel.EndWelcomeHistory(result);
+        }
+        
+        private System.IAsyncResult OnBeginWelcomeHistory(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            klient_do_WCF.ServiceReference1.DataContractIService1WelcomeHistory ALL = ((klient_do_WCF.ServiceReference1.DataContractIService1WelcomeHistory)(inValues[0]));
+            return this.BeginWelcomeHistory(ALL, callback, asyncState);
+        }
+        
+        private object[] OnEndWelcomeHistory(System.IAsyncResult result) {
+            string retVal = this.EndWelcomeHistory(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnWelcomeHistoryCompleted(object state) {
+            if ((this.WelcomeHistoryCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.WelcomeHistoryCompleted(this, new WelcomeHistoryCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void WelcomeHistoryAsync(klient_do_WCF.ServiceReference1.DataContractIService1WelcomeHistory ALL) {
+            this.WelcomeHistoryAsync(ALL, null);
+        }
+        
+        public void WelcomeHistoryAsync(klient_do_WCF.ServiceReference1.DataContractIService1WelcomeHistory ALL, object userState) {
+            if ((this.onBeginWelcomeHistoryDelegate == null)) {
+                this.onBeginWelcomeHistoryDelegate = new BeginOperationDelegate(this.OnBeginWelcomeHistory);
+            }
+            if ((this.onEndWelcomeHistoryDelegate == null)) {
+                this.onEndWelcomeHistoryDelegate = new EndOperationDelegate(this.OnEndWelcomeHistory);
+            }
+            if ((this.onWelcomeHistoryCompletedDelegate == null)) {
+                this.onWelcomeHistoryCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnWelcomeHistoryCompleted);
+            }
+            base.InvokeAsync(this.onBeginWelcomeHistoryDelegate, new object[] {
+                        ALL}, this.onEndWelcomeHistoryDelegate, this.onWelcomeHistoryCompletedDelegate, userState);
         }
         
         public string DateReturn() {
             return base.Channel.DateReturn();
         }
         
-        public System.Threading.Tasks.Task<string> DateReturnAsync() {
-            return base.Channel.DateReturnAsync();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginDateReturn(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDateReturn(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndDateReturn(System.IAsyncResult result) {
+            return base.Channel.EndDateReturn(result);
+        }
+        
+        private System.IAsyncResult OnBeginDateReturn(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginDateReturn(callback, asyncState);
+        }
+        
+        private object[] OnEndDateReturn(System.IAsyncResult result) {
+            string retVal = this.EndDateReturn(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnDateReturnCompleted(object state) {
+            if ((this.DateReturnCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DateReturnCompleted(this, new DateReturnCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DateReturnAsync() {
+            this.DateReturnAsync(null);
+        }
+        
+        public void DateReturnAsync(object userState) {
+            if ((this.onBeginDateReturnDelegate == null)) {
+                this.onBeginDateReturnDelegate = new BeginOperationDelegate(this.OnBeginDateReturn);
+            }
+            if ((this.onEndDateReturnDelegate == null)) {
+                this.onEndDateReturnDelegate = new EndOperationDelegate(this.OnEndDateReturn);
+            }
+            if ((this.onDateReturnCompletedDelegate == null)) {
+                this.onDateReturnCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDateReturnCompleted);
+            }
+            base.InvokeAsync(this.onBeginDateReturnDelegate, null, this.onEndDateReturnDelegate, this.onDateReturnCompletedDelegate, userState);
         }
         
         public string SendOrder(klient_do_WCF.ServiceReference1.DataContractIService1SendOrder data) {
             return base.Channel.SendOrder(data);
         }
         
-        public System.Threading.Tasks.Task<string> SendOrderAsync(klient_do_WCF.ServiceReference1.DataContractIService1SendOrder data) {
-            return base.Channel.SendOrderAsync(data);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginSendOrder(klient_do_WCF.ServiceReference1.DataContractIService1SendOrder data, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginSendOrder(data, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndSendOrder(System.IAsyncResult result) {
+            return base.Channel.EndSendOrder(result);
+        }
+        
+        private System.IAsyncResult OnBeginSendOrder(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            klient_do_WCF.ServiceReference1.DataContractIService1SendOrder data = ((klient_do_WCF.ServiceReference1.DataContractIService1SendOrder)(inValues[0]));
+            return this.BeginSendOrder(data, callback, asyncState);
+        }
+        
+        private object[] OnEndSendOrder(System.IAsyncResult result) {
+            string retVal = this.EndSendOrder(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnSendOrderCompleted(object state) {
+            if ((this.SendOrderCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.SendOrderCompleted(this, new SendOrderCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void SendOrderAsync(klient_do_WCF.ServiceReference1.DataContractIService1SendOrder data) {
+            this.SendOrderAsync(data, null);
+        }
+        
+        public void SendOrderAsync(klient_do_WCF.ServiceReference1.DataContractIService1SendOrder data, object userState) {
+            if ((this.onBeginSendOrderDelegate == null)) {
+                this.onBeginSendOrderDelegate = new BeginOperationDelegate(this.OnBeginSendOrder);
+            }
+            if ((this.onEndSendOrderDelegate == null)) {
+                this.onEndSendOrderDelegate = new EndOperationDelegate(this.OnEndSendOrder);
+            }
+            if ((this.onSendOrderCompletedDelegate == null)) {
+                this.onSendOrderCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnSendOrderCompleted);
+            }
+            base.InvokeAsync(this.onBeginSendOrderDelegate, new object[] {
+                        data}, this.onEndSendOrderDelegate, this.onSendOrderCompletedDelegate, userState);
         }
         
         public string ReadText() {
             return base.Channel.ReadText();
         }
         
-        public System.Threading.Tasks.Task<string> ReadTextAsync() {
-            return base.Channel.ReadTextAsync();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginReadText(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginReadText(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndReadText(System.IAsyncResult result) {
+            return base.Channel.EndReadText(result);
+        }
+        
+        private System.IAsyncResult OnBeginReadText(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginReadText(callback, asyncState);
+        }
+        
+        private object[] OnEndReadText(System.IAsyncResult result) {
+            string retVal = this.EndReadText(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnReadTextCompleted(object state) {
+            if ((this.ReadTextCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ReadTextCompleted(this, new ReadTextCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void ReadTextAsync() {
+            this.ReadTextAsync(null);
+        }
+        
+        public void ReadTextAsync(object userState) {
+            if ((this.onBeginReadTextDelegate == null)) {
+                this.onBeginReadTextDelegate = new BeginOperationDelegate(this.OnBeginReadText);
+            }
+            if ((this.onEndReadTextDelegate == null)) {
+                this.onEndReadTextDelegate = new EndOperationDelegate(this.OnEndReadText);
+            }
+            if ((this.onReadTextCompletedDelegate == null)) {
+                this.onReadTextCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnReadTextCompleted);
+            }
+            base.InvokeAsync(this.onBeginReadTextDelegate, null, this.onEndReadTextDelegate, this.onReadTextCompletedDelegate, userState);
         }
     }
 }
